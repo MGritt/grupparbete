@@ -1,13 +1,30 @@
-//weatherApp api function
-
+const form = document.querySelector('#form');
+if (form != null){
+  form.addEventListener('submit', function(event){
+    event.preventDefault();
+    search(event);
+  });
+}
+//get search (city) function and pass city to weatherApp(city) function
+function search(event) {
+  event.preventDefault();
+  let city = document.querySelector('#weather').value;
+  weatherApp(city);
+}
+//weatherApp function fetch API & display data for city
+function weatherApp(city) {
+  console.log(city)
+  //weatherApp js
+}
 //geoFunction
 if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(loadCity, handleError);
+    navigator.geolocation.getCurrentPosition(loadCity, handleGEOError);
 } else {
     alert('It seems like Geolocation, which is required for this page, is not enabled in your browser. Please use a browser which supports it.');
 }
 
 const geoBase = 'https://maps.googleapis.com/maps/api/geocode/json?';
+const myCity = document.querySelector("#myCity");
 
 function loadCity(position) {
     var lat = position.coords.latitude;
@@ -24,14 +41,22 @@ function loadCity(position) {
     )
     .then(
       function(response){
-        let city = response.results[6].formatted_address.split(',')[0];
-        let myCity = document.querySelector("#myCity");
-        myCity.innerText = city;
+        const geoCity = response.results[6].formatted_address.split(',')[0];
+        myCity.innerText = geoCity;
+        geoWeather();
       }
     )
-    .catch(handleError);
+    .catch(handleGEOError);
 }
 
-function handleError(error){
+function geoWeather(){
+  const myLoc = document.querySelector('.Mylocation');
+  if (myLoc != null){
+      const city = myCity.innerText;
+      weatherApp(city);
+  }
+}
+
+function handleGEOError(error){
   return error;
 }
