@@ -13,8 +13,46 @@ function search(event) {
 }
 //weatherApp function fetch API & display data for city
 function weatherApp(city) {
-  console.log(city)
-  //weatherApp js
+  let weatherSearchURL = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=920ce113b008fb235bbbe30f64186532`
+  // hämtar lat lon till staden användaren sökt
+  fetch(weatherSearchURL).then((response) => {
+    if(response.status >= 200 && response.status < 300){
+      return response.json()
+    }
+    else{
+      throw 'fetch failed'
+    }
+  }
+  ).then((data) => {
+    let citylon = data[0].lon
+    let citylat = data[0].lat
+    secondSearchURL = `https://api.openweathermap.org/data/2.5/weather?lat=${citylat}&lon=${citylon}&appid=920ce113b008fb235bbbe30f64186532&units=metric`
+    fetch(secondSearchURL).then((response)=> {
+      if(response.status >= 200 && response.status < 300){
+        return response.json()
+      }
+      else{
+        throw 'fetch failed'
+      }
+    }).then((data) => {
+      console.log(data)
+      // uppdaterar all html till sökningen
+      let firstCity = document.querySelector("#firstCity");
+      firstCity.innerText = data.name;
+      let firstTemp = document.getElementById('firstTemp')
+      let temp = data.main.temp
+      firstTemp.innerText = `Temp: ${temp}`
+      let firstDescription = document.getElementById('firstDescription')
+      let description = data.weather[0].description
+      firstDescription.innerText = `Description: ${description}`
+      let firstHumidity = document.getElementById('firstHumidity')
+      let humidity = data.main.humidity
+      firstHumidity.innerText = `Humidity: ${humidity}`
+      let firstWind = document.getElementById('firstWind')
+      let wind = data.wind.speed
+      firstWind.innerText = `Wind speed: ${wind}`
+    })
+  })
 }
 //geoFunction
 if (navigator.geolocation) {
@@ -41,7 +79,7 @@ function loadCity(position) {
     )
     .then(
       function(response){
-        const geoCity = response.results[6].formatted_address.split(',')[0];
+        const geoCity = response.results[7].formatted_address.split(',')[0];
         myCity.innerText = geoCity;
         geoWeather();
       }
@@ -59,52 +97,4 @@ function geoWeather(){
 
 function handleGEOError(error){
   return error;
-}
-
-const userSearchBtn = document.getElementById('btn')
-userSearchBtn.addEventListener('click', frontPage)
-function frontPage(){
-  const userSearchInput = document.getElementById('weather')
-  let userSearch = userSearchInput.value
-  let firstCity = document.getElementById('firstCity')
-  firstCity.innerText = userSearch
-  let weatherSearchURL = `http://api.openweathermap.org/geo/1.0/direct?q=${userSearch}&limit=1&appid=920ce113b008fb235bbbe30f64186532
-  `
-  // hämtar lat lon till staden användaren sökt 
-  fetch(weatherSearchURL).then((response) => {
-    if(response.status >= 200 && response.status < 300){
-      return response.json()
-    }
-    else{
-      throw 'fetch failed'
-    }
-  }
-  ).then((data) => {
-    let citylon = data[0].lon
-    let citylat = data[0].lat
-    secondSearchURL = `https://api.openweathermap.org/data/2.5/weather?lat=${citylat}&lon=${citylon}&appid=920ce113b008fb235bbbe30f64186532&units=metric`
-    fetch(secondSearchURL).then((response)=> {
-      if(response.status >= 200 && response.status < 300){
-        return response.json()
-      }
-      else{
-        throw 'fetch failed'
-      }
-    }).then((data) => {
-      console.log(data)
-      // uppdaterar all html till sökningen
-      let firstTemp = document.getElementById('firstTemp')
-      let temp = data.main.temp
-      firstTemp.innerText = `Temp: ${temp}`
-      let firstDescription = document.getElementById('firstDescription')
-      let description = data.weather[0].description
-      firstDescription.innerText = `Description: ${description}`
-      let firstHumidity = document.getElementById('firstHumidity')
-      let humidity = data.main.humidity
-      firstHumidity.innerText = `Humidity: ${humidity}`
-      let firstWind = document.getElementById('firstWind')
-      let wind = data.wind.speed
-      firstWind.innerText = `Wind speed: ${wind}`
-    })
-  })
 }
