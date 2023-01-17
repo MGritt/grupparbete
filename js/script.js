@@ -50,8 +50,8 @@ function loadCity(position) {
 }
 
 function geoWeather(){
-  const myLoc = document.querySelector('.Mylocation');
-  if (myLoc != null){
+  const geoPage = document.querySelector('#geoPage');
+  if (geoPage != null){
       const city = myCity.innerText;
       weatherApp(city);
   }
