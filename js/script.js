@@ -14,6 +14,7 @@ function search(event) {
 }
 //weatherApp function fetch API & display data for city
 function weatherApp(city) {
+  
   let weatherSearchURL = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=920ce113b008fb235bbbe30f64186532`
   // hämtar lat lon till staden användaren sökt
   fetch(weatherSearchURL).then((response) => {
