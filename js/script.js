@@ -79,8 +79,8 @@ function loadCity(position) {
     )
     .then(
       function(response){
-        console.log(response);
-        const geoCity = response.plus_code.compound_code.formatted_address.split(' ')[1];
+        const geoCityWithComma = response.plus_code.compound_code.split(' ')[1];
+        const geoCity = geoCityWithComma.split(',')[0];
         myCity.innerText = geoCity;
         geoWeather();
       }
