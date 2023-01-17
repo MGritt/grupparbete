@@ -36,7 +36,6 @@ function weatherApp(city) {
         throw 'fetch failed'
       }
     }).then((data) => {
-      console.log(data)
       // uppdaterar all html till sökningen
       let firstCity = document.querySelector("#firstCity");
       firstCity.innerText = data.name;
@@ -80,6 +79,7 @@ function loadCity(position) {
     )
     .then(
       function(response){
+        console.log(response);
         const geoCity = response.results[7].formatted_address.split(',')[0];
         myCity.innerText = geoCity;
         geoWeather();
