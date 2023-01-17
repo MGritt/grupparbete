@@ -80,7 +80,7 @@ function loadCity(position) {
     .then(
       function(response){
         console.log(response);
-        const geoCity = response.results[8].formatted_address.split(',')[0];
+        const geoCity = response.plus_code.compound_code.formatted_address.split(' ')[1];
         myCity.innerText = geoCity;
         geoWeather();
       }
