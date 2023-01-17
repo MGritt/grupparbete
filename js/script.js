@@ -2,7 +2,7 @@ const form = document.querySelector('#form');
 if (form != null){
   form.addEventListener('submit', function(event){
     event.preventDefault();
-    document.querySelector('#weatherInfo').classList.toggle('hidden');
+    document.querySelector('#weatherInfo').classList.remove('hidden');
     search(event);
   });
 }
