@@ -2,6 +2,7 @@ const form = document.querySelector('#form');
 if (form != null){
   form.addEventListener('submit', function(event){
     event.preventDefault();
+    document.querySelector('#weatherInfo').classList.toggle('hidden');
     search(event);
   });
 }
@@ -91,6 +92,7 @@ function geoWeather(){
   const geoPage = document.querySelector('#geoPage');
   if (geoPage != null){
       const city = myCity.innerText;
+      document.querySelector('#weatherInfo').classList.toggle('hidden');
       weatherApp(city);
   }
 }
