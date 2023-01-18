@@ -97,6 +97,7 @@ function geoWeather(){
       const city = myCity.innerText;
       document.querySelector('#weatherInfo').classList.toggle('hidden');
       weatherApp(city);
+      prognosWeather(city);
   }
 }
 
