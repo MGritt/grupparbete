@@ -5,3 +5,34 @@ textarea{
 .hidden {
   display:none;
 }
+#form {
+  margin: auto;
+  width: 50%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#weatherInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer img {
+  width: 30px; /* ange en bredd för varje logotyp */
+  height: 30px; /* ange en höjd för varje logotyp */
+  margin-left: 10px; /* ange ett mellanrum mellan varje logotyp */
+}
+
