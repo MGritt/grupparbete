@@ -133,17 +133,19 @@ function prognosWeather(city){
       console.log(data)
       for(let i = 0; i < 25; i= i+8){
         console.log(data.list[i])
-        let forecast1 = document.createElement('p')
-        forecastContainer.appendChild(forecast1)
+        let ulEl = document.createElement('ul');
+        forecastContainer.append(ulEl);
+        let forecast1 = document.createElement('li')
+        ulEl.appendChild(forecast1)
         forecast1.innerText = `${data.list[i].dt_txt}`
-        let forecast2 = document.createElement('p')
-        forecastContainer.appendChild(forecast2)
+        let forecast2 = document.createElement('li')
+        ulEl.appendChild(forecast2)
         forecast2.innerText = `temp: ${data.list[i].main.temp}`
-        let forecast3 = document.createElement('p')
-        forecastContainer.appendChild(forecast3)
+        let forecast3 = document.createElement('li')
+        ulEl.appendChild(forecast3)
         forecast3.innerText = `prognosis: ${data.list[i].weather[0].description}`
-        let forecast4 = document.createElement('p')
-        forecastContainer.appendChild(forecast4)
+        let forecast4 = document.createElement('li')
+        ulEl.appendChild(forecast4)
         forecast4.innerText = `windspeed: ${data.list[i].wind.speed}`
       }
     }
