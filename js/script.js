@@ -1,3 +1,4 @@
+const forecastContainer = document.getElementById('forecast')
 const form = document.querySelector('#form');
 if (form != null){
   form.addEventListener('submit', function(event){
@@ -11,6 +12,7 @@ function search(event) {
   event.preventDefault();
   let city = document.querySelector('#weather').value;
   weatherApp(city);
+  prognosWeather(city);
 }
 //weatherApp function fetch API & display data for city
 function weatherApp(city) {
@@ -101,3 +103,48 @@ function geoWeather(){
 function handleGEOError(error){
   return error;
 }
+
+function prognosWeather(city){
+  let weatherSearchURL = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=920ce113b008fb235bbbe30f64186532
+  `
+  // hämtar lat lon till staden användaren sökt
+  fetch(weatherSearchURL).then((response) => {
+    if(response.status >= 200 && response.status < 300){
+      return response.json()
+    }
+    else{
+      throw 'fetch failed'
+    }
+  }
+  ).then((data) => {
+    let citylon = data[0].lon
+    let citylat = data[0].lat
+    secondSearchURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${citylat}&lon=${citylon}&appid=920ce113b008fb235bbbe30f64186532&units=metric`
+    fetch(secondSearchURL).then((response)=> {
+      if(response.status >= 200 && response.status < 300){
+        return response.json()
+      }
+      else{
+        throw 'fetch failed'
+      }
+    }
+    ).then((data)=>{
+      console.log(data)
+      for(let i = 0; i < 25; i= i+8){
+        console.log(data.list[i])
+        let forecast1 = document.createElement('p')
+        forecastContainer.appendChild(forecast1)
+        forecast1.innerText = `${data.list[i].dt_txt}`
+        let forecast2 = document.createElement('p')
+        forecastContainer.appendChild(forecast2)
+        forecast2.innerText = `temp: ${data.list[i].main.temp}`
+        let forecast3 = document.createElement('p')
+        forecastContainer.appendChild(forecast3)
+        forecast3.innerText = `prognosis: ${data.list[i].weather[0].description}`
+        let forecast4 = document.createElement('p')
+        forecastContainer.appendChild(forecast4)
+        forecast4.innerText = `windspeed: ${data.list[i].wind.speed}`
+      }
+    }
+    )
+  })}
