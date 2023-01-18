@@ -46,7 +46,7 @@ function weatherApp(city) {
       firstTemp.innerText = `Temp: ${temp}`
       let firstDescription = document.getElementById('firstDescription')
       let description = data.weather[0].description
-      firstDescription.innerText = `Description: ${description}`
+      firstDescription.innerText = description;
       let weatherImg = document.querySelector('#weatherImg');
       weatherImg.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`
       let firstHumidity = document.getElementById('firstHumidity')
