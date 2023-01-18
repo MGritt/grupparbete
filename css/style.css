@@ -47,13 +47,8 @@ input {
   text-shadow: 0 0 20px rgb(95, 92, 92);
 }
 
-footer {
-  background-color: rgb(33, 32, 32);
-  text-align: right;
-  margin-bottom: 20rem;
-  margin-top: 150px;
-}
 
+<<<<<<< HEAD
 footer p {
   text-align: left;
   color: white
@@ -68,6 +63,8 @@ div p {
   background-color: #000;
 
 }
+=======
+>>>>>>> ceac82fa42d4862be454ad26582c0eb2617191df
 #form {
   margin: auto;
   width: 50%; 
@@ -83,10 +80,10 @@ div p {
   justify-content: center;
   border: 2px solid black; /*1px border width, solid border style and black color */
   border-radius: 0px;
-  padding-top: 5px; /* 5px padding på toppen */
-  padding-right: 10px; /* 10px padding på höger sida */
-  padding-bottom: 15px; /* 15px padding på botten */
-  padding-left: 20px; /* 20px padding på vänster sida */
+  padding-top: 5px; 
+  padding-right: 10px; 
+  padding-bottom: 15px; 
+  padding-left: 20px; 
   
 }
 
@@ -101,13 +98,26 @@ footer {
 }
 
 footer img {
-  width: 30px; /* ange en bredd för varje logotyp */
-  height: 30px; /* ange en höjd för varje logotyp */
-  margin-left: 10px; /* ange ett mellanrum mellan varje logotyp */
+  width: 30px; 
+  height: 30px; 
+  margin-left: 10px; 
 }
 
 #logo{
   width: 150px;
   height: 150px;
 }
+
+.form1 {
+  display: flex;
+  flex-direction: column; /* this will make the inputs stack vertically */
+  align-items: center; /* this will center the inputs vertically */
+  justify-content: space-between; /* this will add space between inputs */
+}
+
+#textinput{
+  margin-bottom: 10px;
+
+}
+
 
