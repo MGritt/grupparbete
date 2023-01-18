@@ -6,6 +6,11 @@ textarea {
   display: none;
 }
 
+body{
+  min-height: 100vh;
+  margin: 0;
+}
+
 header {
   background-color: rgb(33, 32, 32);
   text-align: right;
@@ -61,6 +66,7 @@ div p {
   margin-bottom: 5rem;
   color: white;
   background-color: #000;
+
 }
 #form {
   margin: auto;
@@ -85,7 +91,7 @@ div p {
 }
 
 footer {
-  position: absolute;
+ /* position: absolute;*/
   bottom: 0;
   width: 100%;
   background-color: black;
