@@ -137,16 +137,16 @@ function prognosWeather(city){
         forecastContainer.append(ulEl);
         let forecast1 = document.createElement('li')
         ulEl.appendChild(forecast1)
-        forecast1.innerText = `${data.list[i].dt_txt}`
+        forecast1.innerText = `${data.list[i].dt_txt.split('-')[1]}-${data.list[i].dt_txt.split('-')[2].split(' ')[0]}`
         let forecast2 = document.createElement('li')
         ulEl.appendChild(forecast2)
-        forecast2.innerText = `temp: ${data.list[i].main.temp}`
+        forecast2.innerText = `Temperatur ${data.list[i].main.temp}c`
         let forecast3 = document.createElement('li')
         ulEl.appendChild(forecast3)
-        forecast3.innerText = `prognosis: ${data.list[i].weather[0].description}`
+        forecast3.innerText = `Vind h. ${data.list[i].wind.speed}m/s`
         let forecast4 = document.createElement('li')
         ulEl.appendChild(forecast4)
-        forecast4.innerText = `windspeed: ${data.list[i].wind.speed}`
+        forecast4.innerText = `Luft f. ${data.list[i].main.humidity}%`
       }
     }
     )
