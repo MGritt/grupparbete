@@ -43,7 +43,7 @@ function weatherApp(city) {
       firstCity.innerText = data.name;
       let firstTemp = document.getElementById('firstTemp')
       let temp = data.main.temp
-      firstTemp.innerText = `Temp: ${temp}`
+      firstTemp.innerText = `${temp}c`
       let firstDescription = document.getElementById('firstDescription')
       let description = data.weather[0].description
       firstDescription.innerText = description;
@@ -51,10 +51,10 @@ function weatherApp(city) {
       weatherImg.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`
       let firstHumidity = document.getElementById('firstHumidity')
       let humidity = data.main.humidity
-      firstHumidity.innerText = `Humidity: ${humidity}`
+      firstHumidity.innerText = `Humidity: ${humidity}%`
       let firstWind = document.getElementById('firstWind')
       let wind = data.wind.speed
-      firstWind.innerText = `Wind speed: ${wind}`
+      firstWind.innerText = `Wind: ${wind}m/s`
     })
   })
 }
@@ -140,13 +140,13 @@ function prognosWeather(city){
         forecast1.innerText = `${data.list[i].dt_txt.split('-')[1]}-${data.list[i].dt_txt.split('-')[2].split(' ')[0]}`
         let forecast2 = document.createElement('li')
         ulEl.appendChild(forecast2)
-        forecast2.innerText = `Temperatur ${data.list[i].main.temp}c`
+        forecast2.innerText = `Temperature ${data.list[i].main.temp}c`
         let forecast3 = document.createElement('li')
         ulEl.appendChild(forecast3)
-        forecast3.innerText = `Vind h. ${data.list[i].wind.speed}m/s`
+        forecast3.innerText = `Wind ${data.list[i].wind.speed}m/s`
         let forecast4 = document.createElement('li')
         ulEl.appendChild(forecast4)
-        forecast4.innerText = `Luft f. ${data.list[i].main.humidity}%`
+        forecast4.innerText = `Humidity ${data.list[i].main.humidity}%`
       }
     }
     )
