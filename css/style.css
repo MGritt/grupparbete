@@ -18,6 +18,13 @@ textarea{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border: 2px solid black; /*1px border width, solid border style and black color */
+  border-radius: 0px;
+  padding-top: 5px; /* 5px padding på toppen */
+  padding-right: 10px; /* 10px padding på höger sida */
+  padding-bottom: 15px; /* 15px padding på botten */
+  padding-left: 20px; /* 20px padding på vänster sida */
+  
 }
 
 footer {
@@ -34,5 +41,10 @@ footer img {
   width: 30px; /* ange en bredd för varje logotyp */
   height: 30px; /* ange en höjd för varje logotyp */
   margin-left: 10px; /* ange ett mellanrum mellan varje logotyp */
+}
+
+#logo{
+  width: 150px;
+  height: 150px;
 }
 
