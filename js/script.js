@@ -105,6 +105,7 @@ function handleGEOError(error){
   return error;
 }
 
+
 function prognosWeather(city){
   forecastContainer.innerText = '';
   let weatherSearchURL = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=920ce113b008fb235bbbe30f64186532
