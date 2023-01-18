@@ -1,7 +1,64 @@
-textarea{
-    resize: none;
+textarea {
+  resize: none;
 }
 
 .hidden {
-  display:none;
+  display: none;
+}
+
+header {
+  background-color: rgb(33, 32, 32);
+  text-align: right;
+  letter-spacing: 3px;
+}
+
+
+a {
+  color: white;
+  font-weight: 700;
+  text-shadow: 0 0 3px #000;
+  text-decoration: none;
+  font-style: italic;
+}
+
+a:hover {
+  color: rgb(162, 159, 159);
+}
+
+
+button {
+  border-radius: 7px;
+  background-color: rgb(62, 103, 226);
+  color: white;
+  box-shadow: 0 0 20px rgba(203, 199, 199);
+}
+
+input {
+  border-radius: 7px;
+  box-shadow: 0 0 20px rgb(203, 199, 199);
+}
+
+#firstTemp {
+  text-shadow: 0 0 20px rgb(95, 92, 92);
+}
+
+footer {
+  background-color: rgb(33, 32, 32);
+  text-align: right;
+  margin-bottom: 20rem;
+  margin-top: 150px;
+}
+
+footer p {
+  text-align: left;
+  color: white
+}
+
+div p {
+  text-align: left;
+  margin-left: 20rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  color: white;
+  background-color: #000;
 }
