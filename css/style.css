@@ -76,6 +76,7 @@ h1.title {
   margin: 0 auto;
   padding-bottom: 1rem;
 }
+
 #weatherInfo {
   display: flex;
   flex-direction: column;
