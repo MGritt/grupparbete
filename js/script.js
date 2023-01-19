@@ -4,7 +4,6 @@ if (form != null){
   form.addEventListener('submit', function(event){
     event.preventDefault();
     document.querySelector('#weatherInfo').classList.remove('hidden');
-    document.querySelector('footer').classList.remove('footerAbsolute');
     search(event);
   });
 }
@@ -27,6 +26,7 @@ function search(event) {
 }
 //weatherApp function fetch API & display data for city
 function weatherApp(city) {
+  document.querySelector('footer').classList.remove('footerAbsolute');
   let weatherSearchURL = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=920ce113b008fb235bbbe30f64186532`
   // hämtar lat lon till staden användaren sökt
   fetch(weatherSearchURL).then((response) => {
@@ -109,6 +109,7 @@ function geoWeather(){
       document.querySelector('#weatherInfo').classList.toggle('hidden');
       weatherApp(city);
       prognosWeather(city);
+      document.querySelector('footer').classList.remove('footerAbsolute');
   }
 }
 
