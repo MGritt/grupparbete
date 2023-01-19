@@ -9,15 +9,35 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <img src ="../img/logo.png" alt="" srcset="" id="logo"></a>
-        <div>
-            <a href="../index.html">Home</a>
-            <a href="geo.html" id="myCity">My city</a>
-            <a href="about.html">About us</a>
-            <a href="contact.html">Contact us</a>
-        </div>
-    </header>
+  <header>
+<div id="mobileHeaderOpen" class="hidden">
+  <div id="header">
+    <img id='burgerDisplayed' style='text-align:left;max-height:100px;' src='../img/burger-menu.png'>
+    <img style='text-align:right;max-height:100px;margin-left:10%;' src='../img/logo.png'>
+  </div>
+  <div id="navigation">
+    <a href='/' class="button">Startsida</a>
+    <a href='../html/geo.html' class="button">Sök vädret där du är</a>
+    <a href='../html/about.html' class="button">Om oss</a>
+    <a href='../html/contact.html' class="button">Kontakta oss</a>
+  </div>
+</div>
+<div id="mobileHeaderClosed">
+  <div id="header">
+    <img id='burgerDisplayed' style='text-align:left;max-height:100px;' src='../img/burger-menu.png'>
+    <img style='text-align:right;max-height:100px;margin-left:10%;' src='../img/logo.png'>
+  </div>
+</div>
+<div id="notMobile">
+    <img src ="../img/logo.png" style="max-height:100px;" alt="" srcset="" id="logo">
+    <div>
+        <a href="index.html">Home</a>
+        <a href="html/geo.html" id="myCity">My city</a>
+        <a href="html/about.html">About us</a>
+        <a href="html/contact.html">Contact us</a>
+    </div>
+</div>
+</header>
 
     <form action="" class="form1">
         <h1>Kontakta oss</h1>
