@@ -8,6 +8,16 @@ if (form != null){
     search(event);
   });
 }
+const mobileHeaderOpen = document.querySelector('#mobileHeaderOpen');
+  mobileHeaderOpen.addEventListener('click', function(){
+    document.querySelector('#mobileHeaderOpen').classList.add('hidden');
+    document.querySelector('#mobileHeaderClosed').classList.remove('hidden');
+  });
+const mobileHeaderClosed = document.querySelector('#mobileHeaderClosed');
+mobileHeaderClosed.addEventListener('click', function(){
+  document.querySelector('#mobileHeaderOpen').classList.remove('hidden');
+  document.querySelector('#mobileHeaderClosed').classList.add('hidden');
+});
 //get search (city) function and pass city to weatherApp(city) function
 function search(event) {
   event.preventDefault();

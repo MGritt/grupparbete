@@ -31,7 +31,7 @@ a:hover {
 }
 
 
-button {
+button, .button {
   border-radius: 7px;
   background-color: rgb(62, 103, 226);
   color: white;
@@ -139,4 +139,33 @@ footer img {
 
 #forecast li{
   margin: 1rem;
+}
+
+#mobileHeaderOpen {
+  height:100vh;
+  width:100vw;
+  background:black;
+}
+
+#navigation {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+#navigation .button {
+  margin:2rem;
+  padding: 1rem;
+}
+
+@media only screen and (max-width: 900px) {
+  #notMobile {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  #mobileHeaderClosed, #mobileHeaderOpen {
+    display: none;
+  }
 }
