@@ -63,7 +63,7 @@ function weatherApp(city) {
       let firstHumidity = document.querySelector('#wrapper #weatherInfo #firstHumidity')
       let humidity = data.main.humidity
       firstHumidity.innerText = `Humidity: ${humidity}%`
-      let firstWind = document.querySelector('#wrapper #weatherInfo firstWind')
+      let firstWind = document.querySelector('#wrapper #weatherInfo #firstWind')
       let wind = data.wind.speed
       firstWind.innerText = `Wind: ${wind}m/s`
     })
