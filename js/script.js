@@ -59,7 +59,7 @@ function weatherApp(city) {
       let description = data.weather[0].description
       firstDescription.innerText = description;
       let weatherImg = document.querySelector('#wrapper #weatherInfo #weatherImg');
-      weatherImg.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`
+      weatherImg.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
       let firstHumidity = document.querySelector('#wrapper #weatherInfo #firstHumidity')
       let humidity = data.main.humidity
       firstHumidity.innerText = `Humidity: ${humidity}%`
