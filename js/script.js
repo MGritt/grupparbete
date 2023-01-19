@@ -272,9 +272,7 @@ function prognosWeather(city){
       }
     }
     ).then((data)=>{
-      console.log(data)
       for(let i = 0; i < 25; i= i+8){
-        console.log(data.list[i])
         let ulEl = document.createElement('ul');
         forecastContainer.append(ulEl);
         let forecast1 = document.createElement('li')
