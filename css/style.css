@@ -130,3 +130,13 @@ footer img {
 #wrapper {
   margin: 4rem;
 }
+
+#forecast ul{
+  display: flex;
+  border: 1px solid black;
+  list-style: none
+}
+
+#forecast li{
+  margin: 1rem;
+}
