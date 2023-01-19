@@ -47,27 +47,23 @@ input {
   text-shadow: 0 0 20px rgb(95, 92, 92);
 }
 
-
-<<<<<<< HEAD
 footer p {
   text-align: left;
   color: white
 }
 
-div p {
+#about p {
   text-align: left;
   margin-left: 20rem;
   margin-top: 5rem;
   margin-bottom: 5rem;
   color: white;
   background-color: #000;
-
 }
-=======
->>>>>>> ceac82fa42d4862be454ad26582c0eb2617191df
+
 #form {
   margin: auto;
-  width: 50%; 
+  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,11 +76,11 @@ div p {
   justify-content: center;
   border: 2px solid black; /*1px border width, solid border style and black color */
   border-radius: 0px;
-  padding-top: 5px; 
-  padding-right: 10px; 
-  padding-bottom: 15px; 
-  padding-left: 20px; 
-  
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+
 }
 
 footer {
@@ -98,9 +94,9 @@ footer {
 }
 
 footer img {
-  width: 30px; 
-  height: 30px; 
-  margin-left: 10px; 
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
 }
 
 #logo{
@@ -119,5 +115,3 @@ footer img {
   margin-bottom: 10px;
 
 }
-
-
