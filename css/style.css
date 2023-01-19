@@ -131,6 +131,12 @@ footer img {
   margin: 4rem;
 }
 
+#cityWrapper {
+  margin: 4rem;
+  display:flex;
+  justify-content: space-around;
+}
+
 #forecast ul{
   display: flex;
   border: 1px solid black;

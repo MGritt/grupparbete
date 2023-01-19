@@ -50,25 +50,157 @@ function weatherApp(city) {
       }
     }).then((data) => {
       // uppdaterar all html till sökningen
-      let firstCity = document.querySelector("#firstCity");
+      let firstCity = document.querySelector("#wrapper #weatherInfo #firstCity");
       firstCity.innerText = data.name;
-      let firstTemp = document.getElementById('firstTemp')
+      let firstTemp = document.querySelector('#wrapper #weatherInfo #firstTemp')
       let temp = data.main.temp
       firstTemp.innerText = `${temp}c`
-      let firstDescription = document.getElementById('firstDescription')
+      let firstDescription = document.querySelector('#wrapper #weatherInfo #firstDescription')
       let description = data.weather[0].description
       firstDescription.innerText = description;
-      let weatherImg = document.querySelector('#weatherImg');
+      let weatherImg = document.querySelector('#wrapper #weatherInfo #weatherImg');
       weatherImg.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`
-      let firstHumidity = document.getElementById('firstHumidity')
+      let firstHumidity = document.querySelector('#wrapper #weatherInfo #firstHumidity')
       let humidity = data.main.humidity
       firstHumidity.innerText = `Humidity: ${humidity}%`
-      let firstWind = document.getElementById('firstWind')
+      let firstWind = document.querySelector('#wrapper #weatherInfo firstWind')
       let wind = data.wind.speed
       firstWind.innerText = `Wind: ${wind}m/s`
     })
   })
 }
+  let city2 = 'new york';
+  document.querySelector('footer').classList.remove('footerAbsolute');
+  weatherSearchURL = `https://api.openweathermap.org/geo/1.0/direct?q=${city2}&limit=1&appid=920ce113b008fb235bbbe30f64186532`
+  // hämtar lat lon till staden användaren sökt
+  fetch(weatherSearchURL).then((response) => {
+    if(response.status >= 200 && response.status < 300){
+      return response.json()
+    }
+    else{
+      throw 'fetch failed'
+    }
+  }
+  ).then((data) => {
+    let citylon = data[0].lon
+    let citylat = data[0].lat
+    secondSearchURL = `https://api.openweathermap.org/data/2.5/weather?lat=${citylat}&lon=${citylon}&appid=920ce113b008fb235bbbe30f64186532&units=metric`
+    fetch(secondSearchURL).then((response)=> {
+      if(response.status >= 200 && response.status < 300){
+        return response.json()
+      }
+      else{
+        throw 'fetch failed'
+      }
+    }).then((data) => {
+      // uppdaterar all html till sökningen
+      let firstCity = document.querySelector("#cityWrapper #city2 #weatherInfo #firstCity");
+      firstCity.innerText = data.name;
+      let firstTemp = document.querySelector('#cityWrapper #city2 #weatherInfo #firstTemp')
+      let temp = data.main.temp
+      firstTemp.innerText = `${temp}c`
+      let firstDescription = document.querySelector('#cityWrapper #city2 #weatherInfo #firstDescription')
+      let description = data.weather[0].description
+      firstDescription.innerText = description;
+      let weatherImg = document.querySelector('#cityWrapper #city2 #weatherInfo #weatherImg');
+      weatherImg.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`
+      let firstHumidity = document.querySelector('#cityWrapper #city2 #weatherInfo #firstHumidity')
+      let humidity = data.main.humidity
+      firstHumidity.innerText = `Humidity: ${humidity}%`
+      let firstWind = document.querySelector('#cityWrapper #city2 #weatherInfo firstWind')
+      let wind = data.wind.speed
+      firstWind.innerText = `Wind: ${wind}m/s`
+    })
+  })
+
+  let city1 = 'london';
+  document.querySelector('footer').classList.remove('footerAbsolute');
+  weatherSearchURL = `https://api.openweathermap.org/geo/1.0/direct?q=${city1}&limit=1&appid=920ce113b008fb235bbbe30f64186532`
+  // hämtar lat lon till staden användaren sökt
+  fetch(weatherSearchURL).then((response) => {
+    if(response.status >= 200 && response.status < 300){
+      return response.json()
+    }
+    else{
+      throw 'fetch failed'
+    }
+  }
+  ).then((data) => {
+    let citylon = data[0].lon
+    let citylat = data[0].lat
+    secondSearchURL = `https://api.openweathermap.org/data/2.5/weather?lat=${citylat}&lon=${citylon}&appid=920ce113b008fb235bbbe30f64186532&units=metric`
+    fetch(secondSearchURL).then((response)=> {
+      if(response.status >= 200 && response.status < 300){
+        return response.json()
+      }
+      else{
+        throw 'fetch failed'
+      }
+    }).then((data) => {
+      // uppdaterar all html till sökningen
+      let firstCity = document.querySelector("#cityWrapper #city1 #weatherInfo #firstCity");
+      firstCity.innerText = data.name;
+      let firstTemp = document.querySelector('#cityWrapper #city1 #weatherInfo #firstTemp')
+      let temp = data.main.temp
+      firstTemp.innerText = `${temp}c`
+      let firstDescription = document.querySelector('#cityWrapper #city1 #weatherInfo #firstDescription')
+      let description = data.weather[0].description
+      firstDescription.innerText = description;
+      let weatherImg = document.querySelector('#cityWrapper #city1 #weatherInfo #weatherImg');
+      weatherImg.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`
+      let firstHumidity = document.querySelector('#cityWrapper #city1 #weatherInfo #firstHumidity')
+      let humidity = data.main.humidity
+      firstHumidity.innerText = `Humidity: ${humidity}%`
+      let firstWind = document.querySelector('#cityWrapper #city1 #weatherInfo firstWind')
+      let wind = data.wind.speed
+      firstWind.innerText = `Wind: ${wind}m/s`
+    })
+  })
+
+  let city3 = 'malaga';
+  document.querySelector('footer').classList.remove('footerAbsolute');
+  weatherSearchURL = `https://api.openweathermap.org/geo/1.0/direct?q=${city3}&limit=1&appid=920ce113b008fb235bbbe30f64186532`
+  // hämtar lat lon till staden användaren sökt
+  fetch(weatherSearchURL).then((response) => {
+    if(response.status >= 200 && response.status < 300){
+      return response.json()
+    }
+    else{
+      throw 'fetch failed'
+    }
+  }
+  ).then((data) => {
+    let citylon = data[0].lon
+    let citylat = data[0].lat
+    secondSearchURL = `https://api.openweathermap.org/data/2.5/weather?lat=${citylat}&lon=${citylon}&appid=920ce113b008fb235bbbe30f64186532&units=metric`
+    fetch(secondSearchURL).then((response)=> {
+      if(response.status >= 200 && response.status < 300){
+        return response.json()
+      }
+      else{
+        throw 'fetch failed'
+      }
+    }).then((data) => {
+      // uppdaterar all html till sökningen
+      let firstCity = document.querySelector("#cityWrapper #city3 #weatherInfo #firstCity");
+      firstCity.innerText = data.name;
+      let firstTemp = document.querySelector('#cityWrapper #city3 #weatherInfo #firstTemp')
+      let temp = data.main.temp
+      firstTemp.innerText = `${temp}c`
+      let firstDescription = document.querySelector('#cityWrapper #city3 #weatherInfo #firstDescription')
+      let description = data.weather[0].description
+      firstDescription.innerText = description;
+      let weatherImg = document.querySelector('#cityWrapper #city3 #weatherInfo #weatherImg');
+      weatherImg.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`
+      let firstHumidity = document.querySelector('#cityWrapper #city3 #weatherInfo #firstHumidity')
+      let humidity = data.main.humidity
+      firstHumidity.innerText = `Humidity: ${humidity}%`
+      let firstWind = document.querySelector('#cityWrapper #city3 #weatherInfo firstWind')
+      let wind = data.wind.speed
+      firstWind.innerText = `Wind: ${wind}m/s`
+    })
+  })
+
 //geoFunction
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(loadCity, handleGEOError);
