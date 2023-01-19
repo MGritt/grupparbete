@@ -70,7 +70,6 @@ function weatherApp(city) {
   })
 }
   let city2 = 'new york';
-  document.querySelector('footer').classList.remove('footerAbsolute');
   weatherSearchURL = `https://api.openweathermap.org/geo/1.0/direct?q=${city2}&limit=1&appid=920ce113b008fb235bbbe30f64186532`
   // hämtar lat lon till staden användaren sökt
   fetch(weatherSearchURL).then((response) => {
@@ -107,14 +106,13 @@ function weatherApp(city) {
       let firstHumidity = document.querySelector('#cityWrapper #city2 #weatherInfo #firstHumidity')
       let humidity = data.main.humidity
       firstHumidity.innerText = `Humidity: ${humidity}%`
-      let firstWind = document.querySelector('#cityWrapper #city2 #weatherInfo firstWind')
+      let firstWind = document.querySelector('#cityWrapper #city2 #weatherInfo #firstWind')
       let wind = data.wind.speed
       firstWind.innerText = `Wind: ${wind}m/s`
     })
   })
 
   let city1 = 'london';
-  document.querySelector('footer').classList.remove('footerAbsolute');
   weatherSearchURL = `https://api.openweathermap.org/geo/1.0/direct?q=${city1}&limit=1&appid=920ce113b008fb235bbbe30f64186532`
   // hämtar lat lon till staden användaren sökt
   fetch(weatherSearchURL).then((response) => {
@@ -151,14 +149,13 @@ function weatherApp(city) {
       let firstHumidity = document.querySelector('#cityWrapper #city1 #weatherInfo #firstHumidity')
       let humidity = data.main.humidity
       firstHumidity.innerText = `Humidity: ${humidity}%`
-      let firstWind = document.querySelector('#cityWrapper #city1 #weatherInfo firstWind')
+      let firstWind = document.querySelector('#cityWrapper #city1 #weatherInfo #firstWind')
       let wind = data.wind.speed
       firstWind.innerText = `Wind: ${wind}m/s`
     })
   })
 
   let city3 = 'malaga';
-  document.querySelector('footer').classList.remove('footerAbsolute');
   weatherSearchURL = `https://api.openweathermap.org/geo/1.0/direct?q=${city3}&limit=1&appid=920ce113b008fb235bbbe30f64186532`
   // hämtar lat lon till staden användaren sökt
   fetch(weatherSearchURL).then((response) => {
@@ -195,7 +192,7 @@ function weatherApp(city) {
       let firstHumidity = document.querySelector('#cityWrapper #city3 #weatherInfo #firstHumidity')
       let humidity = data.main.humidity
       firstHumidity.innerText = `Humidity: ${humidity}%`
-      let firstWind = document.querySelector('#cityWrapper #city3 #weatherInfo firstWind')
+      let firstWind = document.querySelector('#cityWrapper #city3 #weatherInfo #firstWind')
       let wind = data.wind.speed
       firstWind.innerText = `Wind: ${wind}m/s`
     })
