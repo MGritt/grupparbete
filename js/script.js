@@ -4,7 +4,7 @@ if (form != null){
   form.addEventListener('submit', function(event){
     event.preventDefault();
     document.querySelector('#weatherInfo').classList.remove('hidden');
-    //document.querySelector('footer').classList.remove('footerAbsolute');
+    document.querySelector('footer').classList.remove('footerAbsolute');
     search(event);
   });
 }
