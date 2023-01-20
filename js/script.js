@@ -69,6 +69,7 @@ function weatherApp(city) {
     })
   })
 }
+if (form != null){
   let city2 = 'new york';
   weatherSearchURL = `https://api.openweathermap.org/geo/1.0/direct?q=${city2}&limit=1&appid=920ce113b008fb235bbbe30f64186532`
   // hämtar lat lon till staden användaren sökt
@@ -197,7 +198,7 @@ function weatherApp(city) {
       firstWind.innerText = `Wind: ${wind}m/s`
     })
   })
-
+}
 //geoFunction
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(loadCity, handleGEOError);
