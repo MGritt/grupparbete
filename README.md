@@ -14,7 +14,15 @@ Alla wireframes och mockups till mobil och desktop finns i länken nedan
 https://www.figma.com/file/i1qA0q9DLhVR4xu0zdNazF/Untitled?node-id=0%3A1&t=DjCLiusxaAGIyl3L-1
 
 # HTML
-Vi har skapat totalt 4 sidor index som då är första sidan och sedan 3 andra sidor geo about us och contact us! Alla består av navbar och footer
+Vi har skapat totalt 4 sidor 
+* index som då är första sidan
+
+och sedan 3 andra sidor
+* geo
+* about us
+* contact us
+
+Alla består av navbar och footer
 sen är första sidan och geo sidan styrd med ett väder api och js.
 
 # CSS
