@@ -2,7 +2,7 @@
 webApp för att kolla upp väder globalt med över 200000 städer möjliga att söka.
 
 Skapat med 
-* html,
+* html
 * css
 * js
 
