@@ -133,7 +133,6 @@ footer img {
 }
 
 #cityWrapper {
-  margin: 4rem;
   display:flex;
   justify-content: space-around;
 }
@@ -177,6 +176,9 @@ footer img {
 }
 
 @media only screen and (min-width: 900px) {
+  #cityWrapper {
+      margin: 4rem;
+  }
   #mobileHeaderClosed, #mobileHeaderOpen {
     display: none;
   }
