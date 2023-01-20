@@ -37,7 +37,6 @@ function weatherApp(city) {
       throw 'fetch failed'
     }
   }
-  
   ).then((data) => {
     let citylon = data[0].lon
     let citylat = data[0].lat
