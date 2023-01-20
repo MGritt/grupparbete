@@ -119,6 +119,7 @@ footer img {
 }
 
 .form1 {
+  margin-bottom:20rem;
   display: flex;
   flex-direction: column; /* this will make the inputs stack vertically */
   align-items: center; /* this will center the inputs vertically */
