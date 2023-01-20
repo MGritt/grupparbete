@@ -101,8 +101,10 @@ footer {
   justify-content: space-between;
 }
 
+@media only screen and (min-width: 900px) {
 .footerAbsolute {
   position: absolute;
+}
 }
 
 footer img {
@@ -135,6 +137,11 @@ footer img {
 #cityWrapper {
   display:flex;
   justify-content: space-around;
+  margin: 2rem;
+}
+
+#city1, #city2, #city3 {
+  margin:1rem;
 }
 
 #forecast {
